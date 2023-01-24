@@ -77,12 +77,13 @@ namespace modbusUtil
     return crc;
   }
 
-  bool send(Stream *stream, uint16_t modbusRequestFrame[])
+  bool send(Stream *stream, uint16_t *modbusRequestFrame)
   {
     // send data char by char
     for (int i = 0; i < 8; i++)
     {
-      stream->write(modbusRequestFrame[i]);
+      stream->write(*modbusRequestFrame);
+      modbusRequestFrame++;
     }
     return true;
   }
