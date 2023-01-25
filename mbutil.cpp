@@ -304,4 +304,8 @@ namespace modbusUtil
     return 2 + noOfRegister * registerSize + 2;
   };
 
+  uint16_t sizeOfPayload(uint16 *requestFrame){
+    return *(requestFrame+5);
+  }
+
 };

@@ -40,5 +40,6 @@ namespace modbusUtil
   int16_t parse(uint16_t data[], uint16_t lenData ,uint16_t requestFrame[], float dataOut[]);
 
   uint16_t calcFrameSize(uint16_t noOfRegister, uint16_t registerSize);
+  uint16_t sizeOfPayload(uint16 *requestFrame);
 }
 #endif
